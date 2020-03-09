@@ -16,7 +16,7 @@ import Clock
 
 #
 #   FIRST: KEVIN   LAST: MILLER
-#   STUDENT ID: 001054056
+#  
 #
 
 
