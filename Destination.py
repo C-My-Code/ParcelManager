@@ -13,13 +13,13 @@ class DestinationHashTable:
         for i in range(capacity):
             self.table.append([])
 
-    #This inserts a destination into the hash table by street addres. Time complexity O(1)
+    #This inserts a destination into the hash table by street addres.
     def insert_into_table(self, destination):
         bucket = hash(destination.street_address) % len(self.table)
         bucket_list = self.table[bucket]
         bucket_list.append(destination)
 
-     #This run a search in the hash table for a destination by street address. Time complexity O(n)
+     #This run a search in the hash table for a destination by street address.
     def search_table(self, key):
         bucket = hash(key) % len(self.table)
         bucket_list = self.table[bucket]
@@ -28,7 +28,7 @@ class DestinationHashTable:
                return bucket_list[i] 
         else: 
           return None
-    #This runs a seach in the hash table for a destination matching the street address. If a match is found, it is deleted. Time complexity O(n)
+    #This runs a seach in the hash table for a destination matching the street address. If a match is found, it is deleted.
     def remove_from_table(self, key):
         bucket = hash(key) % len(self.table)
         bucket_list = self.table[bucket]
