@@ -3,7 +3,7 @@ class Graph(object):
         def __init__(self):
             self.adjacency_list = {}
             self.edge_weights = {}
-        #This add a vertex to the adjacency list and gives the vertex its own list of adjacent vertexs initalized to empty. Time complexity O(1)
+        #This add a vertex to the adjacency list and gives the vertex its own list of adjacent vertexs initalized to empty.
         def add_vertex(self, new_vertex):
             self.adjacency_list[new_vertex] = []
         #This adds a directed edge to the graph along with a wight, or in this case, a distance. Time complexity O(1)
@@ -15,7 +15,7 @@ class Graph(object):
             self.add_directed_edge(vertex_a, vertex_b, weight)
             self.add_directed_edge(vertex_b, vertex_a, weight)
 
-          # takes in current address and remaining addresses of the packages on the truck and compares distances. Returns the address closest to the current location. Time complexity O(n)
+          # takes in current address and remaining addresses of the packages on the truck and compares distances. Returns the address closest to the current location.
         def closest_address(self, current_location, next_packages):
                next_up = None
                for i in range(len(next_packages)):
