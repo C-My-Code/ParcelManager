@@ -34,7 +34,7 @@ class Truck:
         distance = graph.edge_weights[int(self.current_location.destination_id),int(next_up.destination_id)]
         time_for_delivery = timedelta(minutes=float(float(distance)/float(self.avg_speed)*60))
         int_delivery_time = float(time_for_delivery.seconds/60)
-        #Checks againt the set time to simulate which deliveries would have completed in the set timeframe. Time complexity O(1)
+        #Checks againt the set time to simulate which deliveries would have completed in the set timeframe.
         while timer_minutes > int_delivery_time:
                 self.current_location = next_up
                 self.total_miles = self.total_miles + float(distance)
@@ -43,7 +43,7 @@ class Truck:
                 delivery_time = self.start_time + self.total_time
                 
                 i=0
-                #Checks all packages in the current load to see if they belong to the current location. Time complexity O(n)
+                #Checks all packages in the current load to see if they belong to the current location.
                 while i < len(self.packages_on_truck):
                     if self.packages_on_truck[i].destination.destination_id == self.current_location.destination_id:
                         self.packages_on_truck[i].delivery_status = "delivered at: "+str(delivery_time)+" by "+self.name
@@ -51,7 +51,7 @@ class Truck:
                       
                     else:
                      i = i+1
-                #Checks if current load has been delivered, if so, it sends the truck back to the hub. Once there, if there is an addition load waiting, it picks it up and starts delivering. TIme complexity O(1)
+                #Checks if current load has been delivered, if so, it sends the truck back to the hub. Once there, if there is an addition load waiting, it picks it up and starts delivering.
                 if len(self.packages_on_truck) < 1:
                   if self.current_location != self.hub:
                     next_up = self.hub
@@ -80,7 +80,7 @@ class TruckNode:
         self.right = None
         self.truck = truck
 
-# This inserts trucks into the tree by truck number. Time complexity O(n)
+# This inserts trucks into the tree by truck number.
     def insert(self, truck):
 
         if self.truck:
@@ -96,7 +96,7 @@ class TruckNode:
                     self.right.insert(truck)
         else:
             self.truck = truck
-# This searches the tree for truck number. Time complexity O(n)
+# This searches the tree for truck number.
     def findnum(self, number):
         if number < self.truck.truck_number:
             if self.left is None:
