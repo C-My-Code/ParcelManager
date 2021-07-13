@@ -26,14 +26,14 @@ import Clock
 
 
 
-#initalizes hash tables, trucks, and console interface
+#initalizes hash tables, trucks, and console interface.
 destination_table = DestinationHashTable()
 package_table = PackageHashTable()
 the_map = Graph.Graph()
 current_time = Clock.Clock()
 
 
-#imports destinations from destinations.csv and stores them in a hash table - time complexity: O(n)
+#imports destinations from destinations.csv and stores them in a hash table.
 with open('destinations.csv') as destinations_csv:
     csv_read = csv.reader(destinations_csv)
     for row in csv_read:
@@ -42,7 +42,7 @@ with open('destinations.csv') as destinations_csv:
             newdestination = Destination.Destination(dest[i][0],dest[i][1],dest[i][2],dest[i][3],dest[i][4])
             destination_table.insert_into_table(newdestination)
 
-#imports package information from packages.csv and matches it with destination information from the csv, then stores the package in a hash table - time complexity: O(n)
+#imports package information from packages.csv and matches it with destination information from the csv, then stores the package in a hash table.
 with open('packages.csv') as packages_csv:
        csv_reader = csv.reader(packages_csv)
        for row in csv_reader:  
@@ -55,11 +55,11 @@ with open('packages.csv') as packages_csv:
            newparcel = Package.Package(ent[i][0],destin,ent[i][5],ent[i][4],ent[i][6])
            package_table.insert_into_table(newparcel)
 
-#Creates Vertex's for Graph and adds them. Time complexity O(n)
+#Creates Vertex's for Graph and adds them.
 for i in range(1,28):
     the_map.add_vertex(i)
 
-#Adds edges and edge weights to graph from csv. Time complexity O(n^3)
+#Adds edges and edge weights to graph from csv.
 with open('distances.csv') as distances_csv:
     csv_read = csv.reader(distances_csv)
     for row in csv_read:
