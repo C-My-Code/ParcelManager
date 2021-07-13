@@ -15,12 +15,12 @@ class PackageHashTable:
         self.table = []
         for i in range(capacity):
             self.table.append([])
-    #This inserts package into the hash table by package id number. Time complexity O(1)
+    #This inserts package into the hash table by package id number.
     def insert_into_table(self, package):
         bucket = hash(package.id_number) % len(self.table)
         bucket_list = self.table[bucket]
         bucket_list.append(package)
-    #This run a search in the hash table for package by id number. Time complexity O(n)
+    #This run a search in the hash table for package by id number.
     def search_table(self, key):
         bucket = hash(key) % len(self.table)
         bucket_list = self.table[bucket]
@@ -29,7 +29,7 @@ class PackageHashTable:
                return bucket_list[i] 
         else: 
           return None
-    #This runs a seach in the hash table for a package matching the id number. If a match is found, it is deleted. Time complexity O(n)
+    #This runs a seach in the hash table for a package matching the id number. If a match is found, it is deleted.
     def remove_from_table(self, key):
         bucket = hash(key) % len(self.table)
         bucket_list = self.table[bucket]
