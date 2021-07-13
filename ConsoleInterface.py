@@ -33,7 +33,7 @@ class ConsoleInterface:
             self.sim_time()
 
 
-#This load the screen that requests the ID number of the package you wish to view and calls the next screen. Time complexity O(1)
+#This load the screen that requests the ID number of the package you wish to view and calls the next screen.
      def update_package_ID_request(self):
             os.system("cls")
             print("                                WGU")
@@ -47,7 +47,7 @@ class ConsoleInterface:
             else:
                 self.start_console()
 
-#This loads the package information view and gives you the options to update the address of the selected package. Time complexity O(1)
+#This loads the package information view and gives you the options to update the address of the selected package.
      def update_package(self, package):
           os.system("cls")
           print("                                WGU")
@@ -97,7 +97,7 @@ class ConsoleInterface:
           self.start_console()
 
 
-#This loads the screen giving you the option to select which time you would like to simulate to and starts the deliveries. Time complexity O(1)
+#This loads the screen giving you the option to select which time you would like to simulate to and starts the deliveries. 
      def sim_time(self):
            os.system("cls")
            print("                                WGU")
